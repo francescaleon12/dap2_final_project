@@ -1,0 +1,17 @@
+# Exclude virtual environments
+venv/
+
+# Exclude image files
+*.png
+
+# Exclude JavaScript files
+*.js
+
+# Exclude CSS files
+*.css
+
+# Exclude font files
+*.woff
+
+# Exclude macOS system files
+.DS_Store

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Francesca Leon | GitHub: francescaleon12">
+<meta name="dcterms.date" content="2024-12-01">
+
+<title>Quality of Life Index for South American Countries: A Focus on Migrants</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="final_project_files/libs/clipboard/clipboard.min.js"></script>
+<script src="final_project_files/libs/quarto-html/quarto.js"></script>
+<script src="final_project_files/libs/quarto-html/popper.min.js"></script>
+<script src="final_project_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="final_project_files/libs/quarto-html/anchor.min.js"></script>
+<link href="final_project_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="final_project_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="final_project_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="final_project_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="final_project_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+</head><body class="fullcontent">\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+
+
+
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+  showspaces = false,
+  showtabs = false,
+  breaksymbolleft={},
+  breaklines
+}
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Quality of Life Index for South American Countries: A Focus on Migrants</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Francesca Leon | GitHub: francescaleon12 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 1, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-and-background" class="level1">
+<h1>Introduction and Background</h1>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
+<p>How can we create a Quality of Life Index (QLI) to facilitate comparison among South American countries and support migrant populations in choosing countries that meet their specific needs?<br>
+</p>
+</section>
+<section id="context" class="level2">
+<h2 class="anchored" data-anchor-id="context">Context</h2>
+<p>International migration across South America has been shaped by political instability, economic crises, and social inequalities, making it a region with unique migration dynamics. One of the most significant migration movements in recent history has been the Venezuelan migration crisis. Since 2015, more than 7 million Venezuelans have left their country, with the majority settling in neighboring nations such as Colombia, Peru, Ecuador, and Brazil. The political and economic collapse in Venezuela has not only triggered large-scale migration but has also created unprecedented challenges for host countries to integrate these populations into their urban centers.<br>
+</p>
+<p>Peru, for instance, has become one of the largest hosts for Venezuelan migrants, with over 1.5 million settling in cities such as Lima. This has placed immense pressure on housing, employment opportunities, and public services. Venezuelan migrants often face difficulties finding formal employment and accessing healthcare, despite Peru’s efforts to provide temporary legal status. Similarly, Colombia has absorbed the highest number of Venezuelan migrants, implementing legal frameworks such as Temporary Protection Permits to allow them access to the labor market. However, cities like Bogotá and Medellín still struggle to balance migration flows with urban development.<br>
+</p>
+<p>Migration trends in South America are not limited to the Venezuelan crisis. In the 1980s, Peru experienced significant outmigration due to internal conflict, hyperinflation, and poverty, with many Peruvians relocating to neighboring countries such as Chile and Argentina. Today, Chile continues to attract migrants due to its relatively stable economy and job market. Argentina, historically a destination for European immigrants, has also become a key host for regional migration. While these nations offer opportunities, migrants often encounter barriers such as xenophobia, informal employment, and limited access to public services.<br>
+</p>
+<p>Brazil, as South America’s largest country, presents a diverse migration landscape. Its expansive economy and geographic proximity to Venezuela have made it a destination for both refugees and economic migrants. Cities like São Paulo and Rio de Janeiro, while economically dynamic, face urban inequality that disproportionately affects migrants, particularly those lacking formal documentation.<br>
+</p>
+<p>Amid this complexity, the need for a decision-making tool like the Quality of Life Index (QLI) becomes evident. Migrants navigating South America often lack reliable data to compare cities based on factors such as job opportunities, safety, or access to healthcare. The QLI fills this gap by aggregating critical indicators and offering a customizable framework to help migrants prioritize their needs. For example, a migrant deciding between Peru and Chile could use the QLI to assess how these countries rank in terms of affordability, education, and social integration.<br>
+</p>
+</section>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>The QLI is designed to serve as a decision-making tool for migrants relocating within South America. While existing indices evaluate global cities, they often fail to capture the nuanced challenges and opportunities faced by migrants in this region. The QLI provides a comparative framework that evaluates cities based on five dimensions: Economic Factors, Health and Well-being, Safety and Governance, Education, and Social and Environmental conditions.<br>
+</p>
+<p>Crucially, the QLI is customizable, allowing users to assign weights to dimensions based on their priorities. For instance, migrants seeking stability might prioritize safety and access to public healthcare, while those pursuing economic opportunities might focus on job availability and affordability. By aligning data with migrant needs, the QLI empowers individuals to make informed decisions and helps policymakers identify areas for urban improvement.<br>
+</p>
+</section>
+</section>
+<section id="literature-review-and-rationale" class="level1">
+<h1>Literature Review and Rationale</h1>
+<section id="existing-indices-and-their-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="existing-indices-and-their-limitations">Existing Indices and Their Limitations</h2>
+<p>Several indices measure quality of life globally, including the Human Development Index (HDI), Mercer’s Quality of Living Survey, and the Economist Intelligence Unit’s Global Liveability Index. While these tools provide valuable insights, they often reflect the priorities of high-income countries and fail to account for the specific needs of migrants in South America.<br>
+</p>
+<p>For example, global indices typically emphasize infrastructure, cultural amenities, and political stability, which may not be as relevant for migrants relocating out of necessity rather than choice. A Venezuelan refugee seeking safety and employment in Colombia, for instance, may prioritize low crime rates and job opportunities over cultural attractions or public transportation systems.<br>
+</p>
+<p>Migration-focused indices, such as the Migrant Integration Policy Index (MIPEX), provide insights into policies that affect integration but are designed primarily for migration to high-income countries. These indices fail to capture the realities of informal labor markets, inequality, and access to basic services, all of which are critical in South American countries.<br>
+</p>
+</section>
+<section id="rationale-for-the-quality-of-life-index" class="level2">
+<h2 class="anchored" data-anchor-id="rationale-for-the-quality-of-life-index">Rationale for the Quality of Life Index</h2>
+<p>The QLI addresses these gaps by focusing on dimensions that are uniquely relevant to South American migrants. For example, safety is a critical concern in a region where crime rates are among the highest globally. However, safety must be contextualized to reflect both physical and economic security, as migrants often face exploitation in informal employment sectors. Similarly, healthcare access must account for affordability and availability.<br>
+</p>
+<p>Education is another crucial dimension, particularly for families seeking better opportunities for their children. While existing indices consider school enrollment rates, the QLI also incorporates public expenditure on education, reflecting a country’s commitment to long-term social development. Social and environmental factors, such as trust in institutions and migration rates, are also prioritized, recognizing the importance of social cohesion in fostering inclusive communities.<br>
+</p>
+<p>By integrating these dimensions and offering customization, the QLI provides a practical tool for migrants to evaluate countries based on their unique needs. For example, a Colombian migrant choosing between Ecuador and Brazil might prioritize healthcare and safety, while a professional moving from Argentina to Chile might emphasize economic factors and education. This flexibility ensures that the QLI is not just a static ranking but a dynamic resource tailored to diverse migration scenarios.<br>
+</p>
+<p>Moreover, the QLI has broader implications for policymakers and urban planners. By identifying strengths and weaknesses in cities, it can guide resource allocation and policy interventions to improve quality of life for both migrants and citizens.<br>
+</p>
+<p>Summarizing, the QLI offers a novel approach to addressing the challenges of migration in South America. By combining robust data with user-driven customization, it empowers migrants to make informed decisions while supporting countries in creating more inclusive and resilient environments.<br>
+</p>
+</section>
+</section>
+<section id="data-sources-and-collection" class="level1">
+<h1>Data Sources and Collection</h1>
+<section id="datasets" class="level2">
+<h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
+<p>The data for this project was sourced from two primary organizations: the World Bank and the Economic Commission for Latin America and the Caribbean (CEPAL). Both organizations are recognized for their comprehensive datasets and focus on development-related indicators in the Latin American region.<br>
+</p>
+<ul>
+<li>World Bank: Data was retrieved using API integration, allowing for access to key indicators such as economic performance, health statistics, and governance metrics.</li>
+<li>CEPAL: Data was manually downloaded from the CEPAL website, providing regional insights with a specific focus on socioeconomic and environmental variables.<br>
+</li>
+</ul>
+</section>
+<section id="key-variables" class="level2">
+<h2 class="anchored" data-anchor-id="key-variables">Key Variables</h2>
+<p>The Quality of Life Index is based on five dimensions, each represented by specific indicators:<br>
+</p>
+<p>Economic Factors</p>
+<ul>
+<li>Unemployment Rate: Percentage of the labor force that is unemployed.</li>
+<li>GDP Per Capita: Measures the average income per person.</li>
+<li>Inflation Rate: Tracks the rate at which prices rise, affecting affordability and purchasing power.</li>
+<li>Poverty Rate: Indicates the percentage of the population living below the national poverty line.</li>
+<li>Population Below Poverty Line: Indicates the percentage of the population living below the international poverty line.<br>
+</li>
+</ul>
+<p>Health and Well-being</p>
+<ul>
+<li>Life Expectancy: Serves as a general indicator of health outcomes and living conditions.</li>
+<li>Hospital Beds per 1,000 People: Reflects the capacity of the healthcare system to accommodate patients.</li>
+<li>Infant Mortality Rate: Quality of maternal and child healthcare services.</li>
+<li>Access to Essential Services: Evaluates the availability of basic water, and sanitation.</li>
+<li>Mean Levels of Fine Particulate Matter: Tracks air quality.<br>
+</li>
+</ul>
+<p>Safety and Governance</p>
+<ul>
+<li>Crime Rates: Measures the prevalence of crime.</li>
+<li>Confidence in the Police: Reflects public trust in law enforcement, which can influence perceptions of safety.</li>
+<li>Ratio of Average Income Between Women and Men: Highlights gender disparities in income.<br>
+</li>
+</ul>
+<p>Education</p>
+<ul>
+<li>School Enrollment Rates: Captures access to education, particularly for children.</li>
+<li>Public Expenditure on Education: Reflects government investment in education infrastructure and quality.<br>
+</li>
+</ul>
+<p>Social and Environmental</p>
+<ul>
+<li>Population Reporting Trust in Other People: Indicates levels of social cohesion and community trust.</li>
+<li>Migration Rate: Tracks population movements, providing context for countries experiencing significant demographic shifts.</li>
+<li>Gini Index: Measures income inequality.</li>
+<li>Population That Has Considered Migrating: Offers insights into dissatisfaction levels and potential push factors in countries.</li>
+<li>Life Satisfaction Index: Reflects subjective well-being, encompassing factors like happiness and fulfillment.<br>
+</li>
+</ul>
+</section>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<section id="index-structure" class="level2">
+<h2 class="anchored" data-anchor-id="index-structure">Index Structure</h2>
+<ol type="1">
+<li><p>Standardization: Each indicator within a topic is standardized to ensure comparability across different units and scales.<br>
+</p></li>
+<li><p>Topic Means: The standardized values are averaged within each topic to calculate a mean score for: Economic Factors, Health and Well-being, Safety and Governance, Education Social and Environmental Conditions.<br>
+</p></li>
+<li><p>Overall Index: The mean scores of the five topics are averaged to produce the overall QLI, representing a holistic measure of quality of life. This approach assumes equal importance of all topics, enabling a standardized comparison of cities based on general quality of life considerations. The formula for the general QLI can be expressed as:</p></li>
+</ol>
+<p><span class="math display">\[QLI = \frac{1}{5} \sum_{i=1}^{5} T_i\]</span></p>
+<p>where <span class="math inline">\(T_{i}\)</span> represents the mean score for each of the five topics.</p>
+<ol start="4" type="1">
+<li>Customization Mechanism: Recognizing the diverse priorities of migrant populations, the QLI also includes a customized index that allows users to adjust the relative importance of each topic. This feature is implemented through the shiny dashboard. The customization mechanism is as follows:</li>
+</ol>
+<ul>
+<li>User Input: Users rank the five topics on a scale of 1 to 5, where 1 is the highest priority and 5 the lowest.</li>
+<li>Dynamic Weighting: Each ranking is converted into a weight using the formula:</li>
+</ul>
+<p><span class="math display">\[W_i = \frac{(6 - R_i)^2}{\sum_{i=1}^{5} (6 - R_i)^2}\]</span></p>
+<p>where <span class="math inline">\(R_{i}\)</span> is the user-assigned rank for topic <span class="math inline">\(i\)</span>, and <span class="math inline">\(W_{i}\)</span> is the normalized weight. This quadratic transformation ensures that higher priorities receive disproportionately higher weights.</p>
+<ul>
+<li>Weighted Calculation: The customized QLI is calculated as the weighted average of the topic means:</li>
+</ul>
+<p><span class="math display">\[Personalized \, QLI = \sum_{i=1}^{5} W_i \cdot T_i\]</span></p>
+</section>
+</section>
+<section id="findings-and-implications" class="level1">
+<h1>Findings and Implications</h1>
+<section id="overall-qli-by-country" class="level2">
+<h2 class="anchored" data-anchor-id="overall-qli-by-country">Overall QLI by Country</h2>
+<p>This graph ranks countries in South America based on their overall Quality of Life Index (QLI), providing a clear comparison of performance assuming equal weight for all the topics. Uruguay, Argentina, and Chile emerge as the top performers, reflecting the Southern Cone’s historically stronger institutions, economic stability, and public services.<br>
+</p>
+<p>Interestingly, Paraguay is an outlier within the Southern Cone, falling below the regional average. This divergence highlights disparities even within relatively prosperous subregions. Paraguay’s lower QLI may be attributed to weaker infrastructure and public services compared to its neighbors, despite geographical proximity and similar cultural ties.<br>
+</p>
+<p>In contrast, Andean countries like Venezuela, Ecuador, and Peru consistently score below the regional mean. Venezuela’s position at the bottom (0.33) reflects the severe socioeconomic and political challenges it has faced in recent decades. The Andean region’s overall lower scores highlight significant gaps in governance, safety, and economic performance compared to the Southern Cone.</p>
+<div id="c008160d" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final_project_files/figure-html/cell-8-output-1.png" width="950" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="qli-by-subregion" class="level2">
+<h2 class="anchored" data-anchor-id="qli-by-subregion">QLI by Subregion</h2>
+<p>This second graph divides South America into two subregions: the Southern Cone (Argentina, Chile, Paraguay, Uruguay, Brazil) and the Andean region (Bolivia, Colombia, Ecuador, Peru, Venezuela). The Southern Cone demonstrates a higher mean QLI (0.59) than the Andean region (0.42), reinforcing the general advantages of the subregion.<br>
+</p>
+<p>Despite their lower QLI scores, Andean countries, particularly Colombia and Ecuador, attract substantial migration flows from other countries of the subregion, such as Venezuela. This may reflect the importance of proximity, affordability, and cultural similarities over absolute quality of life. Migrants facing economic or political crises often prioritize immediate feasibility and people’s references when selecting a destination, even if the long-term benefits are lower.</p>
+<div id="659d5d3d" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final_project_files/figure-html/cell-9-output-1.png" width="447" height="522" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="qli-breakdown-by-topic" class="level2">
+<h2 class="anchored" data-anchor-id="qli-breakdown-by-topic">QLI Breakdown by Topic</h2>
+<p>The radar charts provide a nuanced view of the strengths and weaknesses across five dimensions: Economic Factors, Health and Well-being, Safety and Governance, Education, and Social and Environmental factors. They highlight distinct patterns among South American countries, offering insights that are critical for migrants evaluating potential destinations.<br>
+</p>
+<p>Countries like Argentina and Uruguay display remarkable consistency across all dimensions, which explains their high overall QLI scores. These nations stand out for their balanced performance in Economic Factors, Health and Well-being, and Governance. However, even these top performers reveal areas of relative weakness, such as Uruguay’s challenges in Education. This balance makes these countries attractive options for migrants seeking well-rounded opportunities. Yet, for migrants with specific priorities like education, other countries might present better options despite lower overall scores.<br>
+</p>
+<p>Conversely, countries like Peru and Colombia demonstrate a different kind of consistency—one marked by moderate to low scores across all dimensions. While these countries face systemic challenges, they offer a level of stability in how their institutions function across sectors. This can be interpreted as a “works, but with difficulties” scenario, which might appeal to migrants prioritizing proximity, cultural similarity, or familiarity over high-quality public services.<br>
+</p>
+<p>On the other hand, more inconsistent performers, such as Bolivia, Paraguay, and Ecuador, show significant disparities between dimensions. For example, Bolivia and Paraguay may excel in certain areas, like Social and Environmental factors, but struggle severely in others, such as Education or Economic Factors. These inconsistencies highlight the importance of understanding migrants’ priorities. For example, a migrant valuing economic stability may avoid Bolivia despite its strong social cohesion scores.<br>
+</p>
+<p>These findings underscore the importance of the personalized QLI feature of the Shiny dashboard. By allowing users to adjust the weights of the dimensions based on their priorities, the tool empowers migrants to navigate these complexities. For instance, a migrant prioritizing healthcare may favor Uruguay, while another focused on economic opportunities might lean toward Chile. These charts illustrate that no single country excels in every area, reinforcing the need for a customizable decision-making tool that adapts to the varied priorities of migrants.</p>
+<div id="0ce3ba67" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="final_project_files/figure-html/cell-10-output-1.png" width="2292" height="3060" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="implications" class="level2">
+<h2 class="anchored" data-anchor-id="implications">Implications</h2>
+<p>The Quality of Life Index (QLI) serves as a valuable tool not only for migrants but also for policymakers aiming to address regional disparities and better accommodate migration flows. By breaking down quality of life into five distinct dimensions—economic factors, health and well-being, safety and governance, education, and social and environmental aspects—the QLI provides granular insights that can inform targeted interventions.<br>
+</p>
+<p>For migrants, the Shiny dashboard’s personalization feature empowers them to prioritize their needs and make well-informed decisions. For instance, a migrant prioritizing economic stability could identify destinations with high scores in employment and GDP metrics, while someone prioritizing safety could focus on countries with stronger governance and lower crime rates. This adaptability ensures the tool remains relevant for diverse migration scenarios and enhances decision-making transparency.<br>
+</p>
+<p>From a policymaking perspective, the QLI highlights gaps that countries must address to become more attractive to migrants or to better support their existing populations. For example, countries like Uruguay and Argentina, which score consistently high across multiple dimensions, can focus on sustaining their strengths while addressing gaps in education or other weaker areas. On the other hand, countries with inconsistent performances, such as Bolivia or Ecuador, can use the QLI to identify critical areas for improvement, such as healthcare or governance, which could lead to more balanced development. Policymakers could also use this data to design programs that specifically address the needs of incoming migrants, such as targeted job placement or housing assistance programs.<br>
+</p>
+<p>The QLI also has implications for regional cooperation. By identifying common challenges—such as education in the Southern Cone or safety in the Andean region—countries can collaborate on cross-border initiatives to address these systemic issues. This could involve shared investments in infrastructure, regional agreements to facilitate mobility, or joint programs to address shared migration challenges.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="limitations-and-future-work" class="level1">
+<h1>Limitations and Future Work</h1>
+<p>The Quality of Life Index (QLI) faces challenges in ensuring comprehensive and actionable insights for migrants. Data gaps remain a significant obstacle, as some indicators are not consistently available across all countries. While datasets from organizations like the World Bank and CEPAL provide robust data, smaller countries or specific metrics often lack coverage, complicating comparisons. Additionally, the QLI currently emphasizes general quality-of-life factors, which may not fully address migration-specific needs such as access to legal documentation, support networks, or cultural adaptation.<br>
+</p>
+<p>A key limitation of the QLI is its country-level focus, which may not capture the distinct living conditions and opportunities available in urban areas where many migrants relocate. Future iterations should prioritize city-level data to better serve migrants and policymakers. Furthermore, the reliance on quantitative metrics limits the tool’s ability to reflect qualitative factors like community support and personal well-being, which are critical to migration decisions.<br>
+</p>
+<p>Regulatory migration limitations also present a significant challenge. The QLI assumes that migrants can freely relocate to their chosen destination, which may not always be the case. Legal barriers, visa restrictions, and border controls can make certain countries inaccessible, regardless of their higher QLI scores. Addressing these realities could improve the index’s practical applicability.<br>
+</p>
+<p>Another important limitation is related to purchasing power. Not all migrants can afford flight tickets to distant countries and may prioritize proximity, relying on road travel instead. However, for individuals who can choose between two countries with similar distances and/or costs, the QLI could serve as a valuable tool to guide their decision-making.<br>
+</p>
+<p>The challenges presented should be addressed in future iterations, prioritizing the regulatory policies and city-level focus and following by indicators related with purchasing power and qualitative indicators.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<p>The Quality of Life Index (QLI) offers a nuanced and customizable framework for understanding regional disparities in South America. Its use in the Shiny dashboard, where migrants can adjust weights based on their unique priorities, highlights the critical importance of personalization in migration decision-making. The tool empowers migrants to make informed choices by aligning their needs—whether economic, educational, or safety-related—with the strengths of specific countries.<br>
+</p>
+<p>At the same time, the QLI provides insights for policymakers, who can identify areas requiring improvement to better support their citizens and migrants populations. Policymakers can also use the data to promote regional collaboration, tackling shared challenges like governance and education.<br>
+</p>
+<p>Ultimately, the QLI underscores the complexity of migration decisions. While proximity, affordability, and cultural ties often drive migration flows, the index demonstrates the importance of matching destinations to individual needs. By bridging the gap between migrants’ priorities and policymakers’ goals, the QLI represents a critical step forward in fostering equitable and informed migration practices in South America.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

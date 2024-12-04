@@ -1,0 +1,624 @@
+---
+title: "Quality of Life Index for South American Countries: A Focus on Migrants"
+author: "Francesca Leon | GitHub: francescaleon12"
+date: "12/01/2024"
+format: 
+  pdf:
+    include-in-header: |
+      \usepackage{fvextra}
+      \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    include-before-body: |
+      \RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+        showspaces = false,
+        showtabs = false,
+        breaksymbolleft={},
+        breaklines
+      }
+  html:
+    css: custom.css # Use CSS for styling if needed
+execute:
+  echo: false
+---
+
+
+# Introduction and Background
+
+## Research Question
+
+How can we create a Quality of Life Index (QLI) to facilitate comparison among South American countries and support migrant populations in choosing countries that meet their specific needs?\
+
+## Context
+
+International migration across South America has been shaped by political instability, economic crises, and social inequalities, making it a region with unique migration dynamics. One of the most significant migration movements in recent history has been the Venezuelan migration crisis. Since 2015, more than 7 million Venezuelans have left their country, with the majority settling in neighboring nations such as Colombia, Peru, Ecuador, and Brazil. The political and economic collapse in Venezuela has not only triggered large-scale migration but has also created unprecedented challenges for host countries to integrate these populations into their urban centers.\
+
+Peru, for instance, has become one of the largest hosts for Venezuelan migrants, with over 1.5 million settling in cities such as Lima. This has placed immense pressure on housing, employment opportunities, and public services. Venezuelan migrants often face difficulties finding formal employment and accessing healthcare, despite Peru’s efforts to provide temporary legal status. Similarly, Colombia has absorbed the highest number of Venezuelan migrants, implementing legal frameworks such as Temporary Protection Permits to allow them access to the labor market. However, cities like Bogotá and Medellín still struggle to balance migration flows with urban development.\
+
+Migration trends in South America are not limited to the Venezuelan crisis. In the 1980s, Peru experienced significant outmigration due to internal conflict, hyperinflation, and poverty, with many Peruvians relocating to neighboring countries such as Chile and Argentina. Today, Chile continues to attract migrants due to its relatively stable economy and job market. Argentina, historically a destination for European immigrants, has also become a key host for regional migration. While these nations offer opportunities, migrants often encounter barriers such as xenophobia, informal employment, and limited access to public services.\
+
+Brazil, as South America’s largest country, presents a diverse migration landscape. Its expansive economy and geographic proximity to Venezuela have made it a destination for both refugees and economic migrants. Cities like São Paulo and Rio de Janeiro, while economically dynamic, face urban inequality that disproportionately affects migrants, particularly those lacking formal documentation.\
+
+Amid this complexity, the need for a decision-making tool like the Quality of Life Index (QLI) becomes evident. Migrants navigating South America often lack reliable data to compare cities based on factors such as job opportunities, safety, or access to healthcare. The QLI fills this gap by aggregating critical indicators and offering a customizable framework to help migrants prioritize their needs. For example, a migrant deciding between Peru and Chile could use the QLI to assess how these countries rank in terms of affordability, education, and social integration.\
+
+
+## Objective
+
+The QLI is designed to serve as a decision-making tool for migrants relocating within South America. While existing indices evaluate global cities, they often fail to capture the nuanced challenges and opportunities faced by migrants in this region. The QLI provides a comparative framework that evaluates cities based on five dimensions: Economic Factors, Health and Well-being, Safety and Governance, Education, and Social and Environmental conditions.\
+
+Crucially, the QLI is customizable, allowing users to assign weights to dimensions based on their priorities. For instance, migrants seeking stability might prioritize safety and access to public healthcare, while those pursuing economic opportunities might focus on job availability and affordability. By aligning data with migrant needs, the QLI empowers individuals to make informed decisions and helps policymakers identify areas for urban improvement.\
+
+
+# Literature Review and Rationale
+
+## Existing Indices and Their Limitations
+
+Several indices measure quality of life globally, including the Human Development Index (HDI), Mercer’s Quality of Living Survey, and the Economist Intelligence Unit’s Global Liveability Index. While these tools provide valuable insights, they often reflect the priorities of high-income countries and fail to account for the specific needs of migrants in South America.\
+
+For example, global indices typically emphasize infrastructure, cultural amenities, and political stability, which may not be as relevant for migrants relocating out of necessity rather than choice. A Venezuelan refugee seeking safety and employment in Colombia, for instance, may prioritize low crime rates and job opportunities over cultural attractions or public transportation systems.\
+
+Migration-focused indices, such as the Migrant Integration Policy Index (MIPEX), provide insights into policies that affect integration but are designed primarily for migration to high-income countries. These indices fail to capture the realities of informal labor markets, inequality, and access to basic services, all of which are critical in South American countries.\
+
+## Rationale for the Quality of Life Index
+
+The QLI addresses these gaps by focusing on dimensions that are uniquely relevant to South American migrants. For example, safety is a critical concern in a region where crime rates are among the highest globally. However, safety must be contextualized to reflect both physical and economic security, as migrants often face exploitation in informal employment sectors. Similarly, healthcare access must account for affordability and availability.\
+
+Education is another crucial dimension, particularly for families seeking better opportunities for their children. While existing indices consider school enrollment rates, the QLI also incorporates public expenditure on education, reflecting a country's commitment to long-term social development. Social and environmental factors, such as trust in institutions and migration rates, are also prioritized, recognizing the importance of social cohesion in fostering inclusive communities.\
+
+By integrating these dimensions and offering customization, the QLI provides a practical tool for migrants to evaluate countries based on their unique needs. For example, a Colombian migrant choosing between Ecuador and Brazil might prioritize healthcare and safety, while a professional moving from Argentina to Chile might emphasize economic factors and education. This flexibility ensures that the QLI is not just a static ranking but a dynamic resource tailored to diverse migration scenarios.\
+
+Moreover, the QLI has broader implications for policymakers and urban planners. By identifying strengths and weaknesses in cities, it can guide resource allocation and policy interventions to improve quality of life for both migrants and citizens.\
+
+Summarizing, the QLI offers a novel approach to addressing the challenges of migration in South America. By combining robust data with user-driven customization, it empowers migrants to make informed decisions while supporting countries in creating more inclusive and resilient environments.\
+
+
+# Data Sources and Collection
+
+## Datasets
+
+The data for this project was sourced from two primary organizations: the World Bank and the Economic Commission for Latin America and the Caribbean (CEPAL). Both organizations are recognized for their comprehensive datasets and focus on development-related indicators in the Latin American region.\
+
+- World Bank: Data was retrieved using API integration, allowing for access to key indicators such as economic performance, health statistics, and governance metrics.
+- CEPAL: Data was manually downloaded from the CEPAL website, providing regional insights with a specific focus on socioeconomic and environmental variables.\
+
+## Key Variables
+
+The Quality of Life Index is based on five dimensions, each represented by specific indicators:\
+
+Economic Factors
+
+- Unemployment Rate: Percentage of the labor force that is unemployed.
+- GDP Per Capita: Measures the average income per person.
+- Inflation Rate: Tracks the rate at which prices rise, affecting affordability and purchasing power.
+- Poverty Rate: Indicates the percentage of the population living below the national poverty line.
+- Population Below Poverty Line: Indicates the percentage of the population living below the international poverty line.
+\
+
+Health and Well-being
+
+- Life Expectancy: Serves as a general indicator of health outcomes and living conditions.
+- Hospital Beds per 1,000 People: Reflects the capacity of the healthcare system to accommodate patients.
+- Infant Mortality Rate: Quality of maternal and child healthcare services.
+- Access to Essential Services: Evaluates the availability of basic water, and sanitation.
+- Mean Levels of Fine Particulate Matter: Tracks air quality.
+\
+
+Safety and Governance
+
+- Crime Rates: Measures the prevalence of crime.
+- Confidence in the Police: Reflects public trust in law enforcement, which can influence perceptions of safety.
+- Ratio of Average Income Between Women and Men: Highlights gender disparities in income.
+\
+
+Education
+
+- School Enrollment Rates: Captures access to education, particularly for children.
+- Public Expenditure on Education: Reflects government investment in education infrastructure and quality.
+\
+
+Social and Environmental
+
+- Population Reporting Trust in Other People: Indicates levels of social cohesion and community trust.
+- Migration Rate: Tracks population movements, providing context for countries experiencing significant demographic shifts.
+- Gini Index: Measures income inequality.
+- Population That Has Considered Migrating: Offers insights into dissatisfaction levels and potential push factors in countries.
+- Life Satisfaction Index: Reflects subjective well-being, encompassing factors like happiness and fulfillment.\
+
+
+# Methodology
+
+## Index Structure
+
+1. Standardization: Each indicator within a topic is standardized to ensure comparability across different units and scales.\
+
+2. Topic Means: The standardized values are averaged within each topic to calculate a mean score for: Economic Factors, Health and Well-being, Safety and Governance, Education
+Social and Environmental Conditions.\
+
+3. Overall Index: The mean scores of the five topics are averaged to produce the overall QLI, representing a holistic measure of quality of life. This approach assumes equal importance of all topics, enabling a standardized comparison of cities based on general quality of life considerations. The formula for the general QLI can be expressed as:
+
+$$QLI = \frac{1}{5} \sum_{i=1}^{5} T_i$$
+
+where $T_{i}$ represents the mean score for each of the five topics.
+
+4. Customization Mechanism: Recognizing the diverse priorities of migrant populations, the QLI also includes a customized index that allows users to adjust the relative importance of each topic. This feature is implemented through the shiny dashboard. The customization mechanism is as follows:
+
+- User Input: Users rank the five topics on a scale of 1 to 5, where 1 is the highest priority and 5 the lowest.
+- Dynamic Weighting: Each ranking is converted into a weight using the formula:
+
+$$W_i = \frac{(6 - R_i)^2}{\sum_{i=1}^{5} (6 - R_i)^2}$$
+
+where $R_{i}$ is the user-assigned rank for topic $i$, and $W_{i}$ is the normalized weight. This quadratic transformation ensures that higher priorities receive disproportionately higher weights.
+
+- Weighted Calculation: The customized QLI is calculated as the weighted average of the topic means:
+
+$$Personalized \, QLI = \sum_{i=1}^{5} W_i \cdot T_i$$
+
+
+
+# Findings and Implications
+
+
+```{python}
+
+# Import packages
+
+import pandas as pd
+import altair as alt
+import numpy as np
+import time
+from bs4 import BeautifulSoup
+import requests
+from tabulate import tabulate
+from datetime import datetime
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import os
+import wbdata
+import datetime
+import pandas_datareader.data as web
+from textwrap import wrap
+import matplotlib as mpl
+
+import warnings 
+warnings.filterwarnings('ignore')
+alt.renderers.enable("png")
+
+base_directory = '/Users/francescaleon/Documents/GitHub/DAPII/dap2_final_project/data'
+```
+
+
+
+```{python}
+
+# World Bank data
+
+# Set URL
+base_url = "http://api.worldbank.org/v2/country/{}/indicator/{}"
+
+# List of Latin American countries
+latin_american_countries = ["ARG", "BOL", "BRA", "CHL", "COL", "ECU", "PRY", "PER", "URY", "VEN"]
+
+# List of indicators and World Bank codes
+wb_indicators_names = {
+    "Unemployment Rate": "SL.UEM.TOTL.ZS",
+    "Inflation Rate": "FP.CPI.TOTL.ZG",
+    "Life Expectancy": "SP.DYN.LE00.IN",
+    "Hospital Beds per 1,000 People": "SH.MED.BEDS.ZS",
+    "Access to Essential Services": "SH.H2O.BASW.ZS",
+    "School Enrollment Rates": "SE.PRM.ENRR",
+    "Crime Rates": "VC.IHR.PSRC.P5",
+    "Air Pollution Index": "EN.ATM.PM25.MC.M3",
+    "Gini Index": "SI.POV.GINI",
+    "Poverty Rate": "SI.POV.DDAY",
+    "GDP Per Capita": "NY.GDP.PCAP.CD"
+}
+
+# Empty list
+wb_indicators = []
+
+# Format country list and define the year of interest
+countries = ";".join(latin_american_countries)
+year = "2020"
+
+# Loop through each indicator and fetch data
+for indicator_name, indicator_code in wb_indicators_names.items():
+
+    url = base_url.format(countries, indicator_code)
+    params = {"format": "json", "date": year, "per_page": 1000}
+    
+    response = requests.get(url, params=params)
+    raw_data = response.json()
+    
+    if len(raw_data) > 1:
+        records = raw_data[1]
+        
+        for record in records:
+            if record["value"] is not None: 
+                wb_indicators.append({
+                    "Country": record["country"]["value"],
+                    "Indicator": indicator_name,
+                    "Year": record["date"],
+                    "Value": record["value"]
+                })
+
+# Convert data into DataFrame
+wb_indicators = pd.DataFrame(wb_indicators)
+
+
+```
+
+
+
+```{python}
+
+# CEPAL data
+
+cepal_folder = os.path.join(base_directory, "cepal_data")
+
+cepal_indicators = []
+
+# Loop through all Excel files in the cepal_data folder
+for file_name in os.listdir(cepal_folder):
+    if file_name.endswith(".xlsx") and not file_name.startswith("~$"):
+        file_path = os.path.join(cepal_folder, file_name)
+        try:
+            df = pd.read_excel(file_path, engine='openpyxl')
+            filtered_df = df[["indicator", "Country__ESTANDAR", "Years__ESTANDAR", "value"]]
+            cepal_indicators.append(filtered_df)
+        except Exception as e:
+            print(f"Error reading {file_name}: {e}")
+
+
+cepal_indicators = pd.concat(cepal_indicators, ignore_index=True)
+
+# Rename columns
+cepal_indicators = cepal_indicators.rename(columns={
+    "Country__ESTANDAR": "Country",
+    "indicator": "Indicator",
+    "Years__ESTANDAR": "Year",
+    "value": "Value"
+})
+```
+
+
+
+
+```{python}
+
+# Combine and filter databases
+
+# Create dataframe with all indicators
+all_indicators = pd.concat([wb_indicators, cepal_indicators], ignore_index=True)
+
+# Clean country names
+all_indicators["Country"] = all_indicators["Country"].apply(
+    lambda x: "Bolivia" if "Bolivia" in x else 
+              "Venezuela" if "Venezuela" in x else 
+              x
+)
+
+# List of Latin American countries (full names)
+latin_american_countries_full = [
+    "Argentina", "Bolivia", "Brazil", "Chile", "Colombia", 
+    "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"
+]
+
+# Filter countries of interest
+all_indicators = all_indicators[all_indicators['Country'].isin(latin_american_countries_full)]
+
+```
+
+
+
+
+```{python}
+
+# Standardize indicators and create QLI
+
+# Pivot the data to have indicators as columns
+pivoted_data = all_indicators.pivot_table(
+    index="Country", columns="Indicator", values="Value"
+).reset_index()
+
+# Define indicators and their directions
+indicators = {
+    "Unemployment Rate": "lower_better",
+    "Air Pollution Index": "lower_better",
+    "Population reporting trust in other people": "higher_better",
+    "Infant mortality rate": "lower_better",
+    "Mean levels of fine particulate matter": "lower_better",
+    "Migration rate": "lower_better", 
+    "Confidence in the police": "higher_better",
+    "Crime Rates": "lower_better",
+    "Hospital Beds per 1,000 People": "higher_better",
+    "Life Expectancy": "higher_better",
+    "Gini Index": "lower_better",
+    "Poverty Rate": "lower_better",
+    "School Enrollment Rates": "higher_better",
+    "Population below poverty line": "lower_better",
+    "Access to Essential Services": "higher_better",
+    "Public expenditure on education": "higher_better",
+    "GDP Per Capita": "higher_better",
+    "Inflation Rate": "lower_better",
+    "Ratio of average income between women and men": "higher_better",
+    "Life Satisfaction Index" : "higher_better",
+    "Population that has considered migrating to another country" : "lower_better"
+}
+
+# Normalize the data
+normalized_data = pivoted_data.copy()
+
+for indicator, direction in indicators.items():
+    if indicator in normalized_data.columns:
+        min_val = normalized_data[indicator].min()
+        max_val = normalized_data[indicator].max()
+        
+        if direction == "higher_better":
+            normalized_data[indicator] = (normalized_data[indicator] - min_val) / (max_val - min_val)
+        elif direction == "lower_better":
+            normalized_data[indicator] = (max_val - normalized_data[indicator]) / (max_val - min_val)
+
+```
+
+
+```{python}
+
+# QLI groupped by topic
+
+# Define topics and their associated indicators
+topics = {
+    "Economic Factors": [
+        "Unemployment Rate", "GDP Per Capita", "Inflation Rate", "Poverty Rate", "Population below poverty line"
+    ],
+    "Health and Well-being": [
+        "Life Expectancy", "Hospital Beds per 1,000 People", "Infant mortality rate", "Access to Essential Services", 
+        "Mean levels of fine particulate matter"
+    ],
+    "Safety and Governance": [
+        "Crime Rates", "Confidence in the police", "Ratio of average income between women and men"
+    ],
+    "Education": [
+        "School Enrollment Rates", "Public expenditure on education"
+    ],
+    "Social and Environmental": [
+        "Population reporting trust in other people", "Migration rate", "Gini Index", "Population that has considered migrating to another country", "Life Satisfaction Index"
+    ]
+}
+
+# Create dictionary
+topic_data = {}
+
+# Calculate mean of the topic
+for topic, indicators in topics.items():
+    topic_data[topic] = normalized_data[indicators].mean(axis=1, skipna=True)
+
+# Combine topic-level data into a dataframe
+topic_averages = pd.DataFrame(topic_data)
+topic_averages["Country"] = normalized_data["Country"]
+
+# Save file
+topic_averages.to_excel(os.path.join(base_directory, "topic_averages.xlsx"), index=False)
+
+
+# Include general QLI results
+
+qli_results = topic_averages.copy()
+
+qli_results["QLI"] = qli_results[["Economic Factors", "Health and Well-being", "Safety and Governance", "Education", "Social and Environmental"]].mean(axis=1)
+
+
+```
+
+## Overall QLI by Country
+
+This graph ranks countries in South America based on their overall Quality of Life Index (QLI), providing a clear comparison of performance assuming equal weight for all the topics. Uruguay, Argentina, and Chile emerge as the top performers, reflecting the Southern Cone’s historically stronger institutions, economic stability, and public services.\
+
+Interestingly, Paraguay is an outlier within the Southern Cone, falling below the regional average. This divergence highlights disparities even within relatively prosperous subregions. Paraguay’s lower QLI may be attributed to weaker infrastructure and public services compared to its neighbors, despite geographical proximity and similar cultural ties.\
+
+In contrast, Andean countries like Venezuela, Ecuador, and Peru consistently score below the regional mean. Venezuela’s position at the bottom (0.33) reflects the severe socioeconomic and political challenges it has faced in recent decades. The Andean region’s overall lower scores highlight significant gaps in governance, safety, and economic performance compared to the Southern Cone.
+
+```{python}
+
+# Bar chart
+
+# Calculate the regional mean
+qli_mean = qli_results["QLI"].mean()
+
+qli_results_with_mean = pd.concat(
+    [qli_results, pd.DataFrame({"Country": ["Regional Mean"], "QLI": [qli_mean]})],
+    ignore_index=True
+)
+
+qli_results_with_mean = qli_results_with_mean.sort_values("QLI", ascending=True)
+
+# Assign colors
+colors = ["sienna" if country == "Regional Mean" else "peru" for country in qli_results_with_mean["Country"]]
+
+# Create the bar chart
+plt.figure(figsize=(10, 6))
+bars = plt.barh(
+    qli_results_with_mean["Country"], qli_results_with_mean["QLI"], color=colors
+)
+
+for bar in bars:
+    plt.text(
+        bar.get_width(), 
+        bar.get_y() + bar.get_height() / 2,
+        f"{bar.get_width():.2f}",
+        va="center", fontsize=10
+    )
+
+plt.xlabel("Quality of Life Index (QLI)")
+plt.ylabel("Country")
+plt.title("Quality of Life Index by Country and Regional Mean")
+plt.tight_layout()
+plt.show()
+
+```
+
+
+## QLI by Subregion
+
+This second graph divides South America into two subregions: the Southern Cone (Argentina, Chile, Paraguay, Uruguay, Brazil) and the Andean region (Bolivia, Colombia, Ecuador, Peru, Venezuela). The Southern Cone demonstrates a higher mean QLI (0.59) than the Andean region (0.42), reinforcing the general advantages of the subregion.\
+
+Despite their lower QLI scores, Andean countries, particularly Colombia and Ecuador, attract substantial migration flows from other countries of the subregion, such as Venezuela. This may reflect the importance of proximity, affordability, and cultural similarities over absolute quality of life. Migrants facing economic or political crises often prioritize immediate feasibility and people's references when selecting a destination, even if the long-term benefits are lower.
+
+```{python}
+
+# Map chart
+
+# Load the Natural Earth data
+world = gpd.read_file(os.path.join(base_directory, "latin_america_geom/ne_110m_admin_0_countries.shp"))
+
+# Merge your QLI data with the Natural Earth data
+world = world.rename(columns={"NAME": "Country"}) 
+merged = world.merge(qli_results, on="Country", how="inner")
+
+# Define subregions
+subregions = {
+    "Andean": ["Bolivia", "Colombia", "Ecuador", "Peru", "Venezuela"],
+    "Southern Cone": ["Argentina", "Chile", "Paraguay", "Uruguay", "Brazil"]
+}
+
+merged["Subregion"] = "Other"
+for subregion, countries in subregions.items():
+    merged.loc[merged["Country"].isin(countries), "Subregion"] = subregion
+
+subregion_colors = {"Andean": "darkgreen", "Southern Cone": "brown"}
+
+# Choropleth map
+fig, ax = plt.subplots(1, 1, figsize=(8, 6))
+choropleth = merged.plot(
+    column="QLI", cmap="cividis", linewidth=0.5, ax=ax, edgecolor="0.8", alpha=0.6
+)
+
+# Create a custom color bar for the QLI
+sm = mpl.cm.ScalarMappable(cmap="cividis", norm=mpl.colors.Normalize(vmin=merged["QLI"].min(), vmax=merged["QLI"].max()))
+sm._A = []
+cbar = fig.colorbar(sm, ax=ax, orientation="vertical", fraction=0.03, pad=0.05)
+cbar.set_label("Quality of Life Index (QLI)", fontsize=12)
+
+# Highlight the border for each subregion and calculate the mean QLI
+for subregion, countries in subregions.items():
+    subregion_gdf = merged[merged["Country"].isin(countries)]
+    subregion_mean = subregion_gdf["QLI"].mean()
+    subregion_boundary = subregion_gdf.unary_union.boundary
+    if subregion_boundary.geom_type == "MultiLineString":
+        for line in subregion_boundary.geoms:
+            x, y = line.xy
+            ax.plot(x, y, label=None, linewidth=2, color=subregion_colors[subregion])
+    else:
+        x, y = subregion_boundary.xy
+        ax.plot(x, y, label=None, linewidth=2, color=subregion_colors[subregion])
+    centroid = subregion_gdf.geometry.unary_union.centroid
+    ax.text(
+        centroid.x, centroid.y, f"{subregion}\n(Mean QLI: {subregion_mean:.2f})",
+        fontsize=8, color=subregion_colors[subregion],
+        ha="center", va="center", bbox=dict(facecolor="white", alpha=0.8, edgecolor="none")
+    )
+
+ax.set_title("Quality of Life Index by Subregion", fontsize=10, pad=20)
+
+plt.show()
+```
+
+
+## QLI Breakdown by Topic
+
+The radar charts provide a nuanced view of the strengths and weaknesses across five dimensions: Economic Factors, Health and Well-being, Safety and Governance, Education, and Social and Environmental factors. They highlight distinct patterns among South American countries, offering insights that are critical for migrants evaluating potential destinations.\
+
+Countries like Argentina and Uruguay display remarkable consistency across all dimensions, which explains their high overall QLI scores. These nations stand out for their balanced performance in Economic Factors, Health and Well-being, and Governance. However, even these top performers reveal areas of relative weakness, such as Uruguay's challenges in Education. This balance makes these countries attractive options for migrants seeking well-rounded opportunities. Yet, for migrants with specific priorities like education, other countries might present better options despite lower overall scores.\
+
+Conversely, countries like Peru and Colombia demonstrate a different kind of consistency—one marked by moderate to low scores across all dimensions. While these countries face systemic challenges, they offer a level of stability in how their institutions function across sectors. This can be interpreted as a "works, but with difficulties" scenario, which might appeal to migrants prioritizing proximity, cultural similarity, or familiarity over high-quality public services.\
+
+On the other hand, more inconsistent performers, such as Bolivia, Paraguay, and Ecuador, show significant disparities between dimensions. For example, Bolivia and Paraguay may excel in certain areas, like Social and Environmental factors, but struggle severely in others, such as Education or Economic Factors. These inconsistencies highlight the importance of understanding migrants' priorities. For example, a migrant valuing economic stability may avoid Bolivia despite its strong social cohesion scores.\
+
+These findings underscore the importance of the personalized QLI feature of the Shiny dashboard. By allowing users to adjust the weights of the dimensions based on their priorities, the tool empowers migrants to navigate these complexities. For instance, a migrant prioritizing healthcare may favor Uruguay, while another focused on economic opportunities might lean toward Chile. These charts illustrate that no single country excels in every area, reinforcing the need for a customizable decision-making tool that adapts to the varied priorities of migrants.
+
+```{python}
+
+# Spider charts
+
+def plot_country_highlight(data, countries):
+    categories = list(data.columns[:-1]) 
+    categories_wrapped = [ "\n".join(wrap(category, width=15)) for category in categories ]
+    angles = np.linspace(0, 2 * np.pi, len(categories), endpoint=False).tolist()
+    angles += angles[:1] 
+
+    num_countries = len(countries)
+    rows, cols = 4, 3 
+
+    fig, axs = plt.subplots(
+        nrows=rows, ncols=cols, figsize=(30, 40), subplot_kw=dict(polar=True)
+    )
+    axs = axs.flatten()
+
+    for idx, country in enumerate(countries):
+        ax = axs[idx]
+        highlighted_data = data[data["Country"] == country].iloc[:, :-1].squeeze()
+        highlighted_values = list(highlighted_data.values) + [highlighted_data.values[0]]
+
+        for other_country in countries:
+            if other_country != country:
+                other_data = data[data["Country"] == other_country].iloc[:, :-1].squeeze()
+                other_values = list(other_data.values) + [other_data.values[0]]
+                ax.plot(angles, other_values, color="lightgrey", linewidth=0.7, alpha=0.5)
+
+        ax.plot(angles, highlighted_values, label=country, color="sienna", linewidth=2)
+        ax.fill(angles, highlighted_values, color="sienna", alpha=0.2)
+        ax.set_xticks(angles[:-1])
+        ax.set_xticklabels(categories_wrapped, fontsize=14, fontweight="bold")
+        ax.set_yticks([])
+        ax.set_title(country, fontsize=20, fontweight="bold", pad=30)
+
+    # Remove unused subplots
+    for idx in range(len(countries), len(axs)):
+        fig.delaxes(axs[idx])
+
+    plt.subplots_adjust(wspace=0.3, hspace=0.4)
+    plt.show()
+
+
+# Apply function
+countries = topic_averages["Country"].unique() 
+plot_country_highlight(topic_averages, countries)
+
+```
+
+
+## Implications
+
+The Quality of Life Index (QLI) serves as a valuable tool not only for migrants but also for policymakers aiming to address regional disparities and better accommodate migration flows. By breaking down quality of life into five distinct dimensions—economic factors, health and well-being, safety and governance, education, and social and environmental aspects—the QLI provides granular insights that can inform targeted interventions.\
+
+For migrants, the Shiny dashboard's personalization feature empowers them to prioritize their needs and make well-informed decisions. For instance, a migrant prioritizing economic stability could identify destinations with high scores in employment and GDP metrics, while someone prioritizing safety could focus on countries with stronger governance and lower crime rates. This adaptability ensures the tool remains relevant for diverse migration scenarios and enhances decision-making transparency.\
+
+From a policymaking perspective, the QLI highlights gaps that countries must address to become more attractive to migrants or to better support their existing populations. For example, countries like Uruguay and Argentina, which score consistently high across multiple dimensions, can focus on sustaining their strengths while addressing gaps in education or other weaker areas. On the other hand, countries with inconsistent performances, such as Bolivia or Ecuador, can use the QLI to identify critical areas for improvement, such as healthcare or governance, which could lead to more balanced development. Policymakers could also use this data to design programs that specifically address the needs of incoming migrants, such as targeted job placement or housing assistance programs.\
+
+The QLI also has implications for regional cooperation. By identifying common challenges—such as education in the Southern Cone or safety in the Andean region—countries can collaborate on cross-border initiatives to address these systemic issues. This could involve shared investments in infrastructure, regional agreements to facilitate mobility, or joint programs to address shared migration challenges.
+
+{{< pagebreak >}}
+
+# Limitations and Future Work
+
+The Quality of Life Index (QLI) faces challenges in ensuring comprehensive and actionable insights for migrants. Data gaps remain a significant obstacle, as some indicators are not consistently available across all countries. While datasets from organizations like the World Bank and CEPAL provide robust data, smaller countries or specific metrics often lack coverage, complicating comparisons. Additionally, the QLI currently emphasizes general quality-of-life factors, which may not fully address migration-specific needs such as access to legal documentation, support networks, or cultural adaptation.\
+
+A key limitation of the QLI is its country-level focus, which may not capture the distinct living conditions and opportunities available in urban areas where many migrants relocate. Future iterations should prioritize city-level data to better serve migrants and policymakers. Furthermore, the reliance on quantitative metrics limits the tool’s ability to reflect qualitative factors like community support and personal well-being, which are critical to migration decisions.\
+
+Regulatory migration limitations also present a significant challenge. The QLI assumes that migrants can freely relocate to their chosen destination, which may not always be the case. Legal barriers, visa restrictions, and border controls can make certain countries inaccessible, regardless of their higher QLI scores. Addressing these realities could improve the index's practical applicability.\
+
+Another important limitation is related to purchasing power. Not all migrants can afford flight tickets to distant countries and may prioritize proximity, relying on road travel instead. However, for individuals who can choose between two countries with similar distances and/or costs, the QLI could serve as a valuable tool to guide their decision-making.\
+
+The challenges presented should be addressed in future iterations, prioritizing the regulatory policies and city-level focus and following by indicators related with purchasing power and qualitative indicators.
+
+{{< pagebreak >}}
+
+# Conclusions
+
+The Quality of Life Index (QLI) offers a nuanced and customizable framework for understanding regional disparities in South America. Its use in the Shiny dashboard, where migrants can adjust weights based on their unique priorities, highlights the critical importance of personalization in migration decision-making. The tool empowers migrants to make informed choices by aligning their needs—whether economic, educational, or safety-related—with the strengths of specific countries.\
+
+At the same time, the QLI provides insights for policymakers, who can identify areas requiring improvement to better support their citizens and migrants populations. Policymakers can also use the data to promote regional collaboration, tackling shared challenges like governance and education.\
+
+Ultimately, the QLI underscores the complexity of migration decisions. While proximity, affordability, and cultural ties often drive migration flows, the index demonstrates the importance of matching destinations to individual needs. By bridging the gap between migrants’ priorities and policymakers’ goals, the QLI represents a critical step forward in fostering equitable and informed migration practices in South America.
+
+
+
+
+
